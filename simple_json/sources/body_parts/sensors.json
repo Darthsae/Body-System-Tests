@@ -1,0 +1,45 @@
+{
+  "eye": {
+    "tags": {
+      "sensor": {
+        "type": "visual",
+        "value": {
+          "type": "range",
+          "min": 380,
+          "max": 700
+        }
+      }
+    },
+    "size": 1.0
+  },
+  "ear": {
+    "tags": {
+      "sensor": {
+        "type": "auditory",
+        "value": {
+          "type": "range",
+          "min": 20,
+          "max": 20000
+        }
+      }
+    },
+    "size": 1.0
+  },
+  "nose": {
+    "tags": {
+      "sensor": {
+        "type": "olfactory",
+        "value": {
+          "type": "whitelist",
+          "values": [
+            {
+              "substance": "red",
+              "min_amount": 1.0
+            }
+          ]
+        }
+      }
+    },
+    "size": 1.0
+  }
+}

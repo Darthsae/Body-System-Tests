@@ -1,0 +1,15 @@
+{
+  "leg": {
+    "tags": {
+      "locamotion": {
+        "type": "ground",
+        "speed": 2.5
+      }
+    },
+    "size": 1.0
+  },
+  "arm": {
+    "tags": {},
+    "size": 1.0
+  }
+}

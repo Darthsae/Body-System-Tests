@@ -1,50 +1,38 @@
-import json
-from abc import ABC, abstractmethod
+import json, os
+from src.entity import EntityType, EntityInstance
+from src.body_part import BodyPartType
+from src.data import Data
+from src.util import debugDict
 
-def debugDict(a_dict: dict) -> str:
-    to_return: str = "{\n"
-    for key, value in a_dict.items():
-        to_return += f"  \"{key}\": {value},\n"
-    return to_return[:-2] + "\n}"
+def loadBodyParts(path: str, data: Data):
+    with os.scandir(path) as entries:
+        for entry in entries:
+            if entry.is_file() and entry.name.endswith(".json"):
+                with open(entry.path) as file:
+                    info: dict[str] = json.load(file)
+                    for name, value in info.items():
+                        data.bodyPartTypes[name] = BodyPartType.from_dict(data, name, value)
+            elif entry.is_dir():
+                loadBodyParts(entry.path, data)
 
-class Serializable(ABC):
-    @abstractmethod
-    def to_dict(self) -> dict | None:
-        ...
-    
-    @classmethod
-    @abstractmethod
-    def from_dict(cls, a_dict: dict):
-        ...
+def loadEntityTypes(path: str, data: Data):
+    with os.scandir(path) as entries:
+        for entry in entries:
+            if entry.is_file() and entry.name.endswith(".json"):
+                with open(entry.path) as file:
+                    info: dict[str] = json.load(file)
+                    for name, value in info.items():
+                        data.entityTypes[name] = EntityType.from_dict(data, name, value)
+            elif entry.is_dir():
+                loadEntityTypes(entry.path, data)
 
-class BodyPartType(Serializable):
-    def __init__(self):
-        ...
-    
-    def to_dict(self) -> dict | None:
-        ...
-    
-    @classmethod
-    def from_dict(cls, a_dict: dict):
-        ...
+data: Data = Data()
 
-class BodyPartInstance:
-    def __init__(self):
-        ...
+loadBodyParts("sources/body_parts", data)
+loadEntityTypes("sources/entities", data)
 
-class EntityType(Serializable):
-    def __init__(self):
-        ...
-    
-    def to_dict(self) -> dict | None:
-        ...
-    
-    @classmethod
-    def from_dict(cls, a_dict: dict):
-        ...
+entity = EntityInstance(data, "Entity", data.entityTypes["bear"])
 
-class EntityInstance:
-    def __init__(self):
-        ...
+print(debugDict(entity.__dict__))
 
 print("Init")
