@@ -1,6 +1,6 @@
-from material import Material
+from material import MaterialType
 
 class Substance:
-    def __init__(self, material: Material, amount: float):
+    def __init__(self, material: MaterialType, amount: float):
         self.material = material
         self.amount = amount

@@ -1,5 +1,14 @@
 {
   "iron": {
-    
+    "tags": {},
+    "density": 1.0
+  },
+  "zinc": {
+    "tags": {},
+    "density": 1.0
+  },
+  "silicon": {
+    "tags": {},
+    "density": 1.0
   }
 }
