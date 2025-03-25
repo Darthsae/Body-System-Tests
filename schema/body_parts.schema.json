@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "$ref": "./body_part.schema.json"
+    }
+  }
+}

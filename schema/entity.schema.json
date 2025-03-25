@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "type": "object",
+      "description": "An entity.",
+      "properties": {
+        "body_plan": {
+          "$ref": "./body_part_instance.schema.json"
+        }
+      }
+    }
+  }
+}

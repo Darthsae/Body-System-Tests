@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "description": "A body part.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "A id of the body part, used for reference, should be unique."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of body part."
+    },
+    "body_parts": {
+      "type": "array",
+      "description": "A list of body parts.",
+      "items": {
+        "$ref": "./body_part_instance.schema.json"
+      }
+    },
+    "overrides": {
+      "type": "object",
+      "description": "These are overrides.",
+      "properties": {
+        "tags": {
+          "type": "object",
+          "description": "The tags of the body part.",
+          "properties": {
+            "locomotion": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ground",
+                    "fluid"
+                  ]
+                },
+                "speed": {
+                  "type": "number",
+                  "description": "The speed."
+                }
+              },
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "fluid"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "material": {
+                    "type": "string",
+                    "description": "A material."
+                  }
+                },
+                "required": [
+                  "material"
+                ]
+              },
+              "required": [
+                "type",
+                "speed"
+              ]
+            }
+          }
+        },
+        "size": {
+          "type": "number",
+          "description": "The relative size of the body part."
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "body_parts",
+    "overrides"
+  ]
+}

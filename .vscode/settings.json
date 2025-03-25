@@ -1,0 +1,16 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "**/sources/body_parts/*.json"
+            ],
+            "url": "./schema/body_parts.schema.json"
+        },
+        {
+            "fileMatch": [
+                "**/sources/entities/*.json"
+            ],
+            "url": "./schema/entity.schema.json"
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 {
   "leg": {
     "tags": {
-      "locamotion": {
+      "locomotion": {
         "type": "ground",
         "speed": 2.5
       }

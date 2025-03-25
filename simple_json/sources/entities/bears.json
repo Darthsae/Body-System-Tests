@@ -5,56 +5,70 @@
 			"type": "upper_body",
 			"body_parts": [
 				{
-					"id": "lower_body",
-					"type": "lower_body",
+					"id": "torso",
+					"type": "torso",
 					"body_parts": [
 						{
-							"id": "left_back_leg",
-							"type": "leg",
-							"body_parts": [],
-							"overrides": {}
-						},
-						{
-							"id": "right_back_leg",
-							"type": "leg",
-							"body_parts": [],
+							"id": "lower_body",
+							"type": "lower_body",
+							"body_parts": [
+								{
+									"id": "left_back_leg",
+									"type": "leg",
+									"body_parts": [],
+									"overrides": {}
+								},
+								{
+									"id": "right_back_leg",
+									"type": "leg",
+									"body_parts": [],
+									"overrides": {}
+								}
+							],
 							"overrides": {}
 						}
 					],
 					"overrides": {}
 				},
 				{
-					"id": "head",
-					"type": "head",
+					"id": "neck",
+					"type": "neck",
 					"body_parts": [
 						{
-							"id": "left_eye",
-							"type": "eye",
-							"body_parts": [],
-							"overrides": {}
-						},
-						{
-							"id": "right_eye",
-							"type": "eye",
-							"body_parts": [],
-							"overrides": {}
-						},
-						{
-							"id": "left_ear",
-							"type": "ear",
-							"body_parts": [],
-							"overrides": {}
-						},
-						{
-							"id": "right_ear",
-							"type": "ear",
-							"body_parts": [],
-							"overrides": {}
-						},
-						{
-							"id": "nose",
-							"type": "nose",
-							"body_parts": [],
+							"id": "head",
+							"type": "head",
+							"body_parts": [
+								{
+									"id": "left_eye",
+									"type": "eye",
+									"body_parts": [],
+									"overrides": {}
+								},
+								{
+									"id": "right_eye",
+									"type": "eye",
+									"body_parts": [],
+									"overrides": {}
+								},
+								{
+									"id": "left_ear",
+									"type": "ear",
+									"body_parts": [],
+									"overrides": {}
+								},
+								{
+									"id": "right_ear",
+									"type": "ear",
+									"body_parts": [],
+									"overrides": {}
+								},
+								{
+									"id": "nose",
+									"type": "nose",
+									"body_parts": [],
+									"overrides": {}
+								}
+							],
 							"overrides": {}
 						}
 					],
