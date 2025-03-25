@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "description": "A material.",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "description": "The tags of the material.",
+      "properties": {
+        "flammable": {
+          "type": "boolean",
+          "description": "Whether or not this is flammable, defaults to false."
+        }
+      }
+    },
+    "density": {
+      "type": "number",
+      "description": "The density of the material."
+    }
+  },
+  "required": [
+    "tags",
+    "density"
+  ]
+}
