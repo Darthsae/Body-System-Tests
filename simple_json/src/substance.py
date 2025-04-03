@@ -1,4 +1,4 @@
-from material import MaterialType
+from .material import MaterialType
 
 class Substance:
     def __init__(self, material: MaterialType, amount: float):

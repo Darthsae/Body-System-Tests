@@ -11,7 +11,7 @@ class EntityType:
     
     from .data import Data
     @classmethod
-    def from_dict(cls: Self, data: Data, entityType: str, aDict: dict[str]):
+    def from_dict(cls, data: Data, entityType: str, aDict: dict[str]):
         return cls(entityType, aDict["body_plan"])
 
 class EntityInstance:

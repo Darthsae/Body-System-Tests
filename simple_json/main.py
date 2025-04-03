@@ -47,3 +47,5 @@ loadMaterialTypes("sources/materials", data)
 entity = EntityInstance(data, "Entity", data.entityTypes["bear"])
 
 print("Init")
+
+print(entity.bodyPart)

@@ -1,93 +1,193 @@
 {
-	"bear": {
-		"body_plan": {
-			"id": "upper_body",
-			"type": "upper_body",
-			"body_parts": [
-				{
-					"id": "torso",
-					"type": "torso",
-					"body_parts": [
-						{
-							"id": "lower_body",
-							"type": "lower_body",
-							"body_parts": [
-								{
-									"id": "left_back_leg",
-									"type": "leg",
-									"body_parts": [],
-									"overrides": {}
-								},
-								{
-									"id": "right_back_leg",
-									"type": "leg",
-									"body_parts": [],
-									"overrides": {}
-								}
-							],
-							"overrides": {}
-						}
-					],
-					"overrides": {}
-				},
-				{
-					"id": "neck",
-					"type": "neck",
-					"body_parts": [
-						{
-							"id": "head",
-							"type": "head",
-							"body_parts": [
-								{
-									"id": "left_eye",
-									"type": "eye",
-									"body_parts": [],
-									"overrides": {}
-								},
-								{
-									"id": "right_eye",
-									"type": "eye",
-									"body_parts": [],
-									"overrides": {}
-								},
-								{
-									"id": "left_ear",
-									"type": "ear",
-									"body_parts": [],
-									"overrides": {}
-								},
-								{
-									"id": "right_ear",
-									"type": "ear",
-									"body_parts": [],
-									"overrides": {}
-								},
-								{
-									"id": "nose",
-									"type": "nose",
-									"body_parts": [],
-									"overrides": {}
-								}
-							],
-							"overrides": {}
-						}
-					],
-					"overrides": {}
-				},
-				{
-					"id": "left_front_leg",
-					"type": "leg",
-					"body_parts": [],
-					"overrides": {}
-				},
-				{
-					"id": "right_front_leg",
-					"type": "leg",
-					"body_parts": [],
-					"overrides": {}
-				}
-			],
-			"overrides": {}
-		}
-	}
+  "bear": {
+    "body_plan": {
+      "id": "upper_body",
+      "type": "upper_body",
+      "body_parts": [
+        {
+          "id": "heart",
+          "type": "heart",
+          "body_parts": [],
+          "reactions": [
+            {
+              "type": "conditional",
+              "reactants": [
+                {
+                  "type": "substance",
+                  "substance": "oxygen",
+                  "amount": 2.0
+                }
+              ],
+              "products": [
+                {
+                  "type": "substance",
+                  "substance": "blood",
+                  "amount": 2.0
+                }
+              ],
+              "predicates": [
+                {
+                  "type": "comparison",
+                  "comparison": "greater_than_equal_to",
+                  "value": {
+                    "type": "substance_amount",
+                    "substance": "oxygen",
+                    "body_part": {
+                      "type": "type",
+                      "method": "cumulative",
+                      "value": "lung"
+                    }
+                  },
+                  "baseline": {
+                    "type": "constant",
+                    "value": 2
+                  }
+                }
+              ],
+              "success": [
+                {
+                  "type": "remove_substance",
+                  "substance": "oxygen",
+                  "body_part": {
+                    "type": "type",
+                    "method": "cumulative",
+                    "value": "lung"
+                  },
+                  "amount": {
+                    "type": "constant",
+                    "value": 2
+                  }
+                },
+                {
+                  "type": "add_substance",
+                  "substance": "blood",
+                  "body_part": {
+                    "type": "id",
+                    "value": "heart"
+                  },
+                  "amount": {
+                    "type": "constant",
+                    "value": 2
+                  }
+                }
+              ],
+              "fail": []
+            }
+          ],
+          "overrides": {}
+        },
+        {
+          "id": "left_lung",
+          "type": "lung",
+          "body_parts": [],
+          "reactions": [],
+          "overrides": {}
+        },
+        {
+          "id": "right_lung",
+          "type": "lung",
+          "body_parts": [],
+          "reactions": [],
+          "overrides": {}
+        },
+        {
+          "id": "torso",
+          "type": "torso",
+          "body_parts": [
+            {
+              "id": "lower_body",
+              "type": "lower_body",
+              "body_parts": [
+                {
+                  "id": "left_back_leg",
+                  "type": "leg",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                },
+                {
+                  "id": "right_back_leg",
+                  "type": "leg",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                }
+              ],
+              "reactions": [],
+              "overrides": {}
+            }
+          ],
+          "reactions": [],
+          "overrides": {}
+        },
+        {
+          "id": "neck",
+          "type": "neck",
+          "body_parts": [
+            {
+              "id": "head",
+              "type": "head",
+              "body_parts": [
+                {
+                  "id": "left_eye",
+                  "type": "eye",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                },
+                {
+                  "id": "right_eye",
+                  "type": "eye",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                },
+                {
+                  "id": "left_ear",
+                  "type": "ear",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                },
+                {
+                  "id": "right_ear",
+                  "type": "ear",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                },
+                {
+                  "id": "nose",
+                  "type": "nose",
+                  "body_parts": [],
+                  "reactions": [],
+                  "overrides": {}
+                }
+              ],
+              "reactions": [],
+              "overrides": {}
+            }
+          ],
+          "reactions": [],
+          "overrides": {}
+        },
+        {
+          "id": "left_front_leg",
+          "type": "leg",
+          "body_parts": [],
+          "reactions": [],
+          "overrides": {}
+        },
+        {
+          "id": "right_front_leg",
+          "type": "leg",
+          "body_parts": [],
+          "reactions": [],
+          "overrides": {}
+        }
+      ],
+      "reactions": [],
+      "overrides": {}
+    }
+  }
 }
